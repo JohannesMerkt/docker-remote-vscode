@@ -153,3 +153,13 @@ sudo sysctl -p
 ```
 
 Now your docker container has more watchers available.
+
+### Permanent change on synology
+
+On reboot these changes seem to get lost. you need to schedule a task in the synology control panel for a permanent increase
+
+Create a task on boot with the run command:
+
+```
+sh -c '(sleep 90 && echo 204800 > /proc/sys/fs/inotify/max_user_watches)&'
+```
