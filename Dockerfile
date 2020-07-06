@@ -5,7 +5,7 @@ RUN apt-get install -y git
 RUN apt-get install -y curl
 RUN apt-get install -y unzip
 
-# optional docker install
+# optional docker install. Follow readme instructions to get it working properly!
 #RUN apt install -y docker.io
 
 # optional docker-compose install
