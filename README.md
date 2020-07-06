@@ -14,7 +14,7 @@ Since vscode uses ssh to connect to the server we need to have a user (root) wit
 You can build the image with:
 
 ```
-docker build -t vscode_dev_img
+docker build -t vscode_dev_img - < Dockerfile
 ```
 
 Once you build the image you can start it with:
