@@ -5,10 +5,6 @@ RUN apt-get install -y git
 RUN apt-get install -y curl
 RUN apt-get install -y unzip
 
-# increase the watcher count from 8192 to 524288
-RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
-RUN sysctl -p
-
 # optional docker install
 #RUN apt install -y docker.io
 
