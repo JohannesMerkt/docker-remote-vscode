@@ -42,7 +42,10 @@ When you save this file your SSH Target list can be refreshed and should then di
 
 You might want to use docker in your development enviroment. For this commend out the corresponding sections in the dockerfile to install docker. 
 
-But thats not all! This installation only makes sure that you have the needed binaries. The docker deamon will not work however. To get it running properly you should mount the docker deamon of your host machine! Your docker run command needs to be extended with a extra volume mount
+But thats not all! This installation only makes sure that you have the needed binaries. The docker deamon will not work however. To get it running properly you should mount the docker deamon of your host machine! 
+Read More Here: https://tutorials.releaseworksacademy.com/learn/the-simple-way-to-run-docker-in-docker-for-ci#:~:text=Building%20Docker%20containers%20with%20Jenkins%20inside%20a%20container&text=Note%20that%20the%20key%20here,same%20location%20inside%20the%20container.&text=Caveat%3A%20The%20Docker%20daemon%20running,client%20binaries%20you%20are%20installing.
+
+Your docker run command needs to be extended with a extra volume mount
 
 ```
 -v /var/run/docker.sock:/var/run/docker.sock
@@ -123,5 +126,7 @@ After that we need to insert our volume mount:
 ```
 
 I suggest to copy this and paste it right after the opening curly brace after "MountPoints"
+
+to save and quit first press ESC to enter command mode then you can type :wq and hit enter
 
 In order for these changes to take effect restart your synology nas and the you can start the container again.
