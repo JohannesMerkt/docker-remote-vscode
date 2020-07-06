@@ -130,3 +130,26 @@ I suggest to copy this and paste it right after the opening curly brace after "M
 to save and quit first press ESC to enter command mode then you can type :wq and hit enter
 
 In order for these changes to take effect restart your synology nas and the you can start the container again.
+
+## Increase max_user_watches 
+
+VS code uses these watcherss to watch for changes. You can run into the problem that vscode needs more watchers but the system limit is reached. The watchers limit isnt set within the container. Its defined in the host system and shared with all containers.
+You can see your max_user_watches with
+
+```
+cat /proc/sys/fs/inotify/max_user_watches
+```
+
+So to increase the limit access your host systems terminal and enter this:
+
+```
+echo 'fs.inotify.max_user_watches=524288' | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+```
+
+And to apply these changes run:
+
+```
+sudo sysctl -p
+```
+
+Now your docker container has more watchers available.
