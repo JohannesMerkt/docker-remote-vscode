@@ -4,6 +4,10 @@ A docker container for remote vscode development on operating systems with no su
 ## Background
 I needed this container to work remotely on a synology NAS with vscode. Unfortunatly the Remote SSH of vscode does not work with Synologys operating system. So I created this Ubuntu based container and mounted my files from Synology.
 
+## Important
+
+Obviously I dont take any responsibility for any breaking changes made on your system or loss of data. This repository is just a documentation of my findings so that I can easly reproduce my steps if needed. As a bonus I share it publicly to help others in a similar situation like me. You should definetly judge yourself if given information is correct and if you find a mistake or a better solution please share it with me :)
+
 ## Getting Started
 
 Since vscode uses ssh to connect to the server we need to have a user (root) with a password to connect to it. Within the Dockerfile I set a default password (root) that you should definetly change for security reasons! There are two ways to do it: 
